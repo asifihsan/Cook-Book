@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>OpenAI Recommendations</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    body {
+      padding: 20px;
+    }
+    .form-group {
+      margin-bottom: 20px;
+    }
+    h1 {
+      margin-bottom: 30px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1 class="text-center">OpenAI Recommendations</h1>
+  
+    <form action="/generate_recommendations" method="post">
+      <div class="form-group">
+        <label for="cuisine">Cuisine:</label>
+        <input type="text" class="form-control" id="cuisine" name="cuisine" placeholder="Enter cuisine">
+      </div>
+
+      <div class="form-group">
+        <label for="items">Items (comma-separated):</label>
+        <input type="text" class="form-control" id="items" name="items" placeholder="Enter items">
+      </div>
+
+      <button type="submit" class="btn btn-primary">Get Recommendations</button>
+    </form>
+
+    {% if recommended_dishes %}
+      <div class="mt-4">
+        <h3>Recommended Dishes:</h3>
+        <p>{{ recommended_dishes }}</p>
+      </div>
+    {% endif %}
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

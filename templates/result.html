@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Recognized Items and Recipes</title>
+</head>
+<body>
+    <h1>Recognized Items</h1>
+    <ul>
+        {% for item in items %}
+            <li>{{ item }}</li>
+        {% endfor %}
+    </ul>
+    <h2>Recommended Recipes</h2>
+    <ul>
+        {% for recipe in recipes %}
+            <li>{{ recipe }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
